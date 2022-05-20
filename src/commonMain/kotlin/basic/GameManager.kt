@@ -11,7 +11,7 @@ class GameManager(private val container: Container) {
 
     var isRunning = false
     var status = GameStatus.NOT_STARTED
-    private var message: Text? = null
+    private var mess: Text? = null
     private var mes: Text? = null
 
     fun goStartMessage(){
@@ -36,18 +36,18 @@ class GameManager(private val container: Container) {
     fun finish() {
         isRunning = false
         status = GameStatus.FINISHED
-        if(message == null) {
+        if(mess == null) {
             val text = container.text("\t\t\t\t\t\t\t\t\t\tИгра окончена\nНажмите, чтобы играть снова\n\t\t\t\t\t\t\t\t\t\tВаш счёт: $score")
             text.centerOnStage()
             container.addChild(text)
-            message = text
+            mess = text
         }
     }
 
     suspend fun restart() {
         status = GameStatus.RESTARTED
-        container.removeChild(message)
-        message = null
+        container.removeChild(mess)
+        mess = null
         delay(TimeSpan(500.0))
         start()
     }

@@ -10,7 +10,7 @@ import kotlinx.coroutines.*
 class GameWorld(private val game: GameManager): Container() {
     private var speedFactor: Double = 4.0
     private val onePosX = 1000.0
-    private val prPosX = 15000.0
+    private val prPosX = 10000.0
     private val xSpacer = 300.0
     private val startY = 270.0
     private val startY1 = 110.0
